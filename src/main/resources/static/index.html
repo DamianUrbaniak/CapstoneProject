@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Page</title>
+    Welcome!
+    </br>
+
+</head>
+<body>
+<img src="images/paczka.jpg">
+<br><br>
+<b>Parcels already sent </b>
+<ul id="paczki">
+</ul>
+<a href="/paczki.html">
+<br><br>
+<button>Send a new pracel</button>
+</a>
+</body>
+
+<script>
+    fetch('/parcel')
+        .then(response => {
+            response.json().then(body => {
+
+            var ul = document.getElementById('paczki')
+            body.forEach(el => {
+                let li = document.createElement('li');
+                ul.appendChild(li);
+                li.innerHTML += JSON.stringify(el);
+            }
+            );
+            })
+            console.log(response.text);
+        })
+</script>

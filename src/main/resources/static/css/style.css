@@ -1,0 +1,11 @@
+body {
+  background-color: lightblue;
+}
+
+img {
+    width: 300px;
+}
+
+li {
+    word-wrap: break-word;
+}
